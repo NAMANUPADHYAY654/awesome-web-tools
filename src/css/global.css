@@ -8,13 +8,19 @@
 
 /* Keyframes for view transitions */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-20px) translateX(10px); }
+  100% { transform: translateY(0px) translateX(0px); }
 }
 
 .tool-view {
   display: none;
-  animation: fadeIn 0.3s ease-out forwards;
+  animation: fadeIn 0.4s var(--transition-fast) forwards;
 }
 
 .tool-view.active {
@@ -22,18 +28,51 @@
 }
 
 #tools-grid-view {
-  animation: fadeIn 0.3s ease-out forwards;
+  animation: fadeIn 0.4s var(--transition-fast) forwards;
 }
 
 body {
   font-family: var(--font-family);
   background-color: var(--bg-color);
   color: var(--text-main);
-  line-height: 1.5;
+  line-height: 1.6;
   transition: background-color var(--transition-normal), color var(--transition-normal);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Dynamic Animated Background Orb */
+body::before {
+  content: '';
+  position: fixed;
+  top: -10%;
+  left: -10%;
+  width: 40vw;
+  height: 40vw;
+  background: var(--color-primary);
+  filter: blur(100px);
+  opacity: 0.15;
+  z-index: -1;
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -10%;
+  right: -10%;
+  width: 30vw;
+  height: 30vw;
+  background: var(--color-secondary);
+  filter: blur(100px);
+  opacity: 0.15;
+  z-index: -1;
+  border-radius: 50%;
+  animation: float 12s ease-in-out infinite reverse;
 }
 
 a {

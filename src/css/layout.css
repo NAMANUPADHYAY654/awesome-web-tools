@@ -40,16 +40,38 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--gradient-primary);
+  transform: scaleY(0);
+  transition: transform var(--transition-fast);
+  transform-origin: left;
+  border-radius: 4px;
 }
 
 .nav-item:hover {
   background-color: var(--bg-surface-hover);
   color: var(--text-main);
+  transform: translateX(4px);
 }
 
 .nav-item.active {
-  background-color: rgba(99, 102, 241, 0.1);
+  background-color: rgba(139, 92, 246, 0.1);
   color: var(--color-primary);
+  font-weight: 600;
+}
+
+.nav-item.active::before {
+  transform: scaleY(1);
 }
 
 .main-content {

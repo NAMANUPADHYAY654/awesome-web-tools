@@ -7,30 +7,50 @@
 }
 
 .tool-card {
-  padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
+  text-align: center;
   gap: 1rem;
   cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: var(--radius-lg);
+  padding: 2px; /* Border width */
+  background: var(--gradient-primary);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
 }
 
 .tool-card:hover {
-  border-color: var(--color-primary);
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.2), 0 0 20px -5px var(--color-primary);
+  background-color: var(--bg-surface-hover);
+}
+
+.tool-card:hover::before {
+  opacity: 1;
 }
 
 .tool-card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-primary);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+  transition: transform var(--transition-fast);
+}
+
+.tool-card:hover .tool-card-icon {
+  transform: scale(1.1) translateY(-2px);
 }
 
 .tool-card-title {
