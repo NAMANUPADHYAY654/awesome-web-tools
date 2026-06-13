@@ -6,7 +6,7 @@ A modern, responsive, open-source collection of 20+ essential web tools for deve
   <img src="https://raw.githubusercontent.com/awesome-web-tools/awesome-web-tools/main/public/assets/preview.png" alt="Awesome Web Tools Screenshot" width="800">
 </div>
 
-### 🚀 Live Deployment: [https://NAMANUPADHYAY654.github.io/awesome-web-tools/](https://NAMANUPADHYAY654.github.io/awesome-web-tools/)
+### 🚀 Live Deployment: [https://awesome-web-tools.vercel.app](https://awesome-web-tools.vercel.app)
 
 ## ✨ Features
 - **20 Essential Tools**: Everything from a Password Generator to a Markdown Previewer.
