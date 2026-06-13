@@ -15,6 +15,8 @@ import './js/tools/text-case.js';
 import './js/tools/word-count.js';
 import './js/tools/regex-test.js';
 import './js/tools/url-short.js';
+import './js/tools/uuid-gen.js';
+import './js/tools/time-conv.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
