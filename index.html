@@ -1,13 +1,55 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>awesome-web-tools</title>
+    <meta name="description" content="Awesome Web Tools - A collection of 20+ free developer utilities." />
+    <title>Awesome Web Tools 🛠️</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <!-- Sidebar -->
+      <aside class="sidebar glass-panel">
+        <div class="sidebar-header">
+          <h2>🛠️ AWT</h2>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="tool-search" class="input" placeholder="Search tools..." />
+        </div>
+        <nav class="sidebar-nav" id="sidebar-nav">
+          <!-- Populated by JS -->
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header class="header glass-panel">
+          <div class="header-title" id="header-title">
+            <h1>All Tools</h1>
+            <p>Select a tool from the sidebar or search below.</p>
+          </div>
+          <div class="header-actions">
+            <button class="btn btn-outline" id="theme-toggle" aria-label="Toggle Theme">
+              <span id="theme-icon">🌙</span>
+            </button>
+            <a href="https://github.com/yourusername/awesome-web-tools" target="_blank" class="btn btn-outline">GitHub</a>
+          </div>
+        </header>
+
+        <div class="content-area">
+          <!-- Tools Grid View -->
+          <div id="tools-grid-view" class="active">
+            <div class="tools-grid" id="tools-grid">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Individual Tool Views will be injected here -->
+          <div id="tool-content-area"></div>
+        </div>
+      </main>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
