@@ -1,60 +1,99 @@
 import './style.css'
-import javascriptLogo from './assets/javascript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${javascriptLogo}" class="framework" alt="JavaScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.js</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+// Theme Management
+const themeToggle = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', currentTheme);
 
-<div class="ticks"></div>
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const target = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', target);
+  localStorage.setItem('theme', target);
+});
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-          <img class="button-icon" src="${javascriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+// Tool Definitions
+const tools = [
+  { id: 'password-generator', title: 'Password Generator', icon: '🔑', module: () => import('./tools/password-generator.js') },
+  { id: 'json-formatter', title: 'JSON Formatter', icon: '{}', module: () => import('./tools/json-formatter.js') },
+  { id: 'base64', title: 'Base64 Encoder', icon: '🔄', module: () => import('./tools/base64.js') },
+  { id: 'text-case', title: 'Text Case Converter', icon: 'Aa', module: () => import('./tools/text-case.js') },
+  { id: 'word-counter', title: 'Word Counter', icon: '📝', module: () => import('./tools/word-counter.js') },
+  { id: 'regex-tester', title: 'Regex Tester', icon: '🔍', module: () => import('./tools/regex-tester.js') },
+  { id: 'markdown-preview', title: 'Markdown Previewer', icon: 'Ⓜ️', module: () => import('./tools/markdown-preview.js') },
+  { id: 'uuid-generator', title: 'UUID Generator', icon: '🆔', module: () => import('./tools/uuid-generator.js') },
+  { id: 'lorem-ipsum', title: 'Lorem Ipsum Gen.', icon: '📜', module: () => import('./tools/lorem-ipsum.js') },
+  { id: 'url-shortener', title: 'URL Shortener Mock', icon: '🔗', module: () => import('./tools/url-shortener.js') },
+  { id: 'qr-generator', title: 'QR Code Generator', icon: '📱', module: () => import('./tools/qr-generator.js') },
+  { id: 'color-palette', title: 'Color Palette', icon: '🎨', module: () => import('./tools/color-palette.js') },
+  { id: 'timestamp', title: 'Timestamp Converter', icon: '⏰', module: () => import('./tools/timestamp.js') },
+  { id: 'unit-converter', title: 'Unit Converter', icon: '⚖️', module: () => import('./tools/unit-converter.js') },
+  { id: 'bmi-calculator', title: 'BMI Calculator', icon: '⚖️', module: () => import('./tools/bmi-calculator.js') },
+  { id: 'gradient-generator', title: 'Gradient Generator', icon: '🌈', module: () => import('./tools/gradient-generator.js') },
+  { id: 'meta-tag', title: 'Meta Tag Generator', icon: '🏷️', module: () => import('./tools/meta-tag.js') },
+  { id: 'image-base64', title: 'Image to Base64', icon: '🖼️', module: () => import('./tools/image-base64.js') },
+  { id: 'random-data', title: 'Random Data Gen.', icon: '🎲', module: () => import('./tools/random-data.js') },
+  { id: 'cron-helper', title: 'Cron Helper', icon: '⏱️', module: () => import('./tools/cron-helper.js') }
+];
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`
+// App State
+let activeToolId = null;
 
-setupCounter(document.querySelector('#counter'))
+// DOM Elements
+const toolNav = document.getElementById('tool-nav');
+const mainContent = document.getElementById('main-content');
+
+// Render Navigation
+function renderNav() {
+  toolNav.innerHTML = '';
+  tools.forEach(tool => {
+    const navItem = document.createElement('div');
+    navItem.className = `nav-item ${tool.id === activeToolId ? 'active' : ''}`;
+    navItem.innerHTML = `<span class="icon">${tool.icon}</span> <span>${tool.title}</span>`;
+    navItem.addEventListener('click', () => loadTool(tool));
+    toolNav.appendChild(navItem);
+  });
+}
+
+// Load Tool
+async function loadTool(tool) {
+  if (activeToolId === tool.id) return;
+  activeToolId = tool.id;
+  renderNav();
+  
+  mainContent.innerHTML = `<div class="loading">Loading ${tool.title}...</div>`;
+  
+  try {
+    const { render, setup } = await tool.module();
+    mainContent.innerHTML = `
+      <div class="tool-view active">
+        <h2>${tool.title}</h2>
+        <div class="tool-layout">
+          ${render()}
+        </div>
+      </div>
+    `;
+    if (setup) setup(mainContent);
+  } catch (error) {
+    mainContent.innerHTML = `<div class="error">Failed to load ${tool.title}. Error: ${error.message}</div>`;
+  }
+}
+
+// Initial Load
+function init() {
+  const hash = window.location.hash.slice(1);
+  const initialTool = tools.find(t => t.id === hash) || tools[0];
+  loadTool(initialTool);
+}
+
+// Sync hash with active tool
+window.addEventListener('hashchange', init);
+
+// Override loadTool to update hash
+const originalLoadTool = loadTool;
+loadTool = async (tool) => {
+  window.location.hash = tool.id;
+  await originalLoadTool(tool);
+};
+
+init();
