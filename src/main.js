@@ -17,6 +17,8 @@ import './js/tools/regex-test.js';
 import './js/tools/url-short.js';
 import './js/tools/uuid-gen.js';
 import './js/tools/time-conv.js';
+import './js/tools/unit-conv.js';
+import './js/tools/bmi-calc.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
