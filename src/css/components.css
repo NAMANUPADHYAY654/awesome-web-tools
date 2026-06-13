@@ -42,6 +42,11 @@
 
 .btn-outline:hover {
   background-color: var(--bg-surface-hover);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 /* Inputs */

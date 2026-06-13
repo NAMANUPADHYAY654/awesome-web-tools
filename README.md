@@ -2,7 +2,11 @@
 
 A modern, responsive, open-source collection of 20+ essential web tools for developers and everyday users, built with Vite and vanilla JavaScript.
 
-## 🚀 Features
+<div align="center">
+  <img src="https://raw.githubusercontent.com/awesome-web-tools/awesome-web-tools/main/public/assets/preview.png" alt="Awesome Web Tools Screenshot" width="800">
+</div>
+
+## ✨ Features
 - **20 Essential Tools**: Everything from a Password Generator to a Markdown Previewer.
 - **Premium Design**: Modern UI with glassmorphism, smooth animations, and a dark/light mode toggle.
 - **Lightning Fast**: Built with Vite and pure vanilla JS, meaning zero bloat and instant load times.
