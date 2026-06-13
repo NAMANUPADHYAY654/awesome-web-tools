@@ -1,4 +1,4 @@
-import { toolsData } from './state.js';
+import { toolsData, saveRecentTool, getRecentTools } from './state.js';
 
 export function renderSidebar() {
   const nav = document.getElementById('sidebar-nav');
@@ -24,7 +24,30 @@ export function renderSidebar() {
 
 export function renderToolsGrid() {
   const grid = document.getElementById('tools-grid');
-  grid.innerHTML = toolsData.map(tool => `
+  
+  // Render recents if any
+  const recents = getRecentTools();
+  let html = '';
+  
+  if (recents.length > 0) {
+     html += `<div style="grid-column: 1 / -1; margin-bottom: -0.5rem;"><h3 style="color: var(--text-muted); font-size: 1rem;">Recently Used</h3></div>`;
+     recents.forEach(rid => {
+       const tool = toolsData.find(t => t.id === rid);
+       if(tool) {
+         html += `
+          <div class="tool-card glass-panel" style="border-color: var(--color-primary);" data-id="${tool.id}">
+            <div class="tool-card-icon">${tool.icon}</div>
+            <div class="tool-card-title">${tool.name}</div>
+            <div class="tool-card-desc">${tool.desc}</div>
+            <span class="badge">${tool.category}</span>
+          </div>
+         `;
+       }
+     });
+     html += `<div style="grid-column: 1 / -1; margin-top: 1rem; margin-bottom: -0.5rem;"><h3 style="color: var(--text-muted); font-size: 1rem;">All Tools</h3></div>`;
+  }
+
+  html += toolsData.map(tool => `
     <div class="tool-card glass-panel" data-id="${tool.id}">
       <div class="tool-card-icon">${tool.icon}</div>
       <div class="tool-card-title">${tool.name}</div>
@@ -32,6 +55,8 @@ export function renderToolsGrid() {
       <span class="badge">${tool.category}</span>
     </div>
   `).join('');
+  
+  grid.innerHTML = html;
 
   grid.querySelectorAll('.tool-card').forEach(card => {
     card.addEventListener('click', (e) => {
@@ -55,7 +80,9 @@ export function switchView(id) {
     headerTitle.innerHTML = `<h1>All Tools</h1><p>Select a tool from the sidebar or search below.</p>`;
     gridView.style.display = 'block';
     toolContentArea.innerHTML = '';
+    renderToolsGrid(); // Re-render to show updated recents
   } else {
+    saveRecentTool(id);
     const tool = toolsData.find(t => t.id === id);
     headerTitle.innerHTML = `<h1>${tool.icon} ${tool.name}</h1><p>${tool.desc}</p>`;
     gridView.style.display = 'none';

@@ -27,3 +27,16 @@ export let activeToolId = null;
 export function setActiveTool(id) {
   activeToolId = id;
 }
+
+export function saveRecentTool(id) {
+  if (id === 'home') return;
+  let recents = JSON.parse(localStorage.getItem('recent_tools') || '[]');
+  recents = recents.filter(t => t !== id);
+  recents.unshift(id);
+  if (recents.length > 5) recents.pop();
+  localStorage.setItem('recent_tools', JSON.stringify(recents));
+}
+
+export function getRecentTools() {
+  return JSON.parse(localStorage.getItem('recent_tools') || '[]');
+}
