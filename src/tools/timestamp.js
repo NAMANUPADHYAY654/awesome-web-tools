@@ -36,7 +36,7 @@ export function setup(container) {
     // Assuming seconds, convert to ms
     if (val < 10000000000) val *= 1000;
     const d = new Date(val);
-    result.innerHTML = \`\${d.toUTCString()}<br>\${d.toLocaleString()}\`;
+    result.innerHTML = `${d.toUTCString()}<br>${d.toLocaleString()}`;
   });
 
   btnToUnix.addEventListener('click', () => {
@@ -44,12 +44,12 @@ export function setup(container) {
     if (!val) return;
     const d = new Date(val);
     const ts = Math.floor(d.getTime() / 1000);
-    result.innerHTML = \`\${ts} (seconds)<br>\${d.getTime()} (milliseconds)\`;
+    result.innerHTML = `${ts} (seconds)<br>${d.getTime()} (milliseconds)`;
   });
 
   btnNow.addEventListener('click', () => {
     const d = new Date();
     tsInput.value = Math.floor(d.getTime() / 1000);
-    result.innerHTML = \`\${Math.floor(d.getTime() / 1000)} (seconds)<br>\${d.getTime()} (milliseconds)\`;
+    result.innerHTML = `${Math.floor(d.getTime() / 1000)} (seconds)<br>${d.getTime()} (milliseconds)`;
   });
 }

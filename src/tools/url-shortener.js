@@ -34,7 +34,7 @@ export function setup(container) {
     for(let i=0; i<6; i++) {
       code += chars.charAt(Math.floor(Math.random() * chars.length));
     }
-    const shortUrl = \`https://awt.link/\${code}\`;
+    const shortUrl = `https://awt.link/${code}`;
     link.href = '#';
     link.textContent = shortUrl;
     result.style.display = 'block';

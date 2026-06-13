@@ -3,7 +3,7 @@ export function render() {
     <div class="glass-panel" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
       <div style="display: flex; gap: 0.5rem; align-items: center;">
         <span style="font-size: 1.25rem; font-family: monospace;">/</span>
-        <input type="text" id="rt-pattern" class="input" placeholder="Pattern (e.g. \\d+)" style="font-family: monospace;">
+        <input type="text" id="rt-pattern" class="input" placeholder="Pattern (e.g. \d+)" style="font-family: monospace;">
         <span style="font-size: 1.25rem; font-family: monospace;">/</span>
         <input type="text" id="rt-flags" class="input" placeholder="Flags (e.g. g, i)" style="width: 80px; font-family: monospace;" value="g">
       </div>
@@ -35,11 +35,11 @@ export function setup(container) {
       }
 
       const highlighted = text.replace(regex, (match) => {
-        return \`<span style="background: var(--color-primary); color: white; border-radius: 2px;">\${match}</span>\`;
+        return `<span style="background: var(--color-primary); color: white; border-radius: 2px;">${match}</span>`;
       });
-      result.innerHTML = highlighted.replace(/\\n/g, '<br>');
+      result.innerHTML = highlighted.replace(/\n/g, '<br>');
     } catch (e) {
-      result.innerHTML = \`<span style="color: red;">Error: \${e.message}</span>\`;
+      result.innerHTML = `<span style="color: red;">Error: ${e.message}</span>`;
     }
   };
 

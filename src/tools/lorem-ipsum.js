@@ -29,7 +29,7 @@ export function setup(container) {
     for (let i = 0; i < count; i++) {
       res.push(text);
     }
-    output.value = res.join('\\n\\n');
+    output.value = res.join('\n\n');
   };
 
   gen.addEventListener('click', generate);

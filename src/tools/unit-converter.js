@@ -38,8 +38,8 @@ export function setup(container) {
   const populate = () => {
     const t = typeSel.value;
     const keys = Object.keys(units[t]);
-    unit1.innerHTML = keys.map(k => \`<option value="\${k}">\${k}</option>\`).join('');
-    unit2.innerHTML = keys.map(k => \`<option value="\${k}">\${k}</option>\`).join('');
+    unit1.innerHTML = keys.map(k => `<option value="${k}">${k}</option>`).join('');
+    unit2.innerHTML = keys.map(k => `<option value="${k}">${k}</option>`).join('');
     unit2.selectedIndex = Math.min(1, keys.length - 1);
     convert();
   };

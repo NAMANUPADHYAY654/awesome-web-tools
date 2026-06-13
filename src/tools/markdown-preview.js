@@ -24,7 +24,7 @@ export function setup(container) {
     try {
       preview.innerHTML = marked.parse(input.value);
     } catch (e) {
-      preview.innerHTML = \`<span style="color: red;">Error parsing markdown</span>\`;
+      preview.innerHTML = `<span style="color: red;">Error parsing markdown</span>`;
     }
   };
 

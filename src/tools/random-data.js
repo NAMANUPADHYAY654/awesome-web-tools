@@ -38,8 +38,8 @@ export function setup(container) {
       const l = lnames[Math.floor(Math.random() * lnames.length)];
       data.push({
         id: i + 1,
-        name: \`\${f} \${l}\`,
-        email: \`\${f.toLowerCase()}.\${l.toLowerCase()}@example.com\`,
+        name: `${f} ${l}`,
+        email: `${f.toLowerCase()}.${l.toLowerCase()}@example.com`,
         age: Math.floor(Math.random() * 50) + 18
       });
     }
@@ -47,9 +47,9 @@ export function setup(container) {
     if (format.value === 'json') {
       out.value = JSON.stringify(data, null, 2);
     } else {
-      let csv = "id,name,email,age\\n";
+      let csv = "id,name,email,age\n";
       data.forEach(d => {
-        csv += \`\${d.id},"\${d.name}","\${d.email}",\${d.age}\\n\`;
+        csv += `${d.id},"${d.name}","${d.email}",${d.age}\n`;
       });
       out.value = csv;
     }

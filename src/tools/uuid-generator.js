@@ -27,7 +27,7 @@ export function setup(container) {
     for (let i = 0; i < count; i++) {
       uuids.push(crypto.randomUUID());
     }
-    output.value = uuids.join('\\n');
+    output.value = uuids.join('\n');
   };
 
   genBtn.addEventListener('click', generate);

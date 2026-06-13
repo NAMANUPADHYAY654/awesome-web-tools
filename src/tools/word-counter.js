@@ -34,8 +34,8 @@ export function setup(container) {
   input.addEventListener('input', () => {
     const text = input.value;
     charsEl.textContent = text.length;
-    charsNsEl.textContent = text.replace(/\\s/g, '').length;
-    wordsEl.textContent = text.trim() ? text.trim().split(/\\s+/).length : 0;
-    linesEl.textContent = text ? text.split(/\\r\\n|\\r|\\n/).length : 0;
+    charsNsEl.textContent = text.replace(/\s/g, '').length;
+    wordsEl.textContent = text.trim() ? text.trim().split(/\s+/).length : 0;
+    linesEl.textContent = text ? text.split(/\r\n|\r|\n/).length : 0;
   });
 }

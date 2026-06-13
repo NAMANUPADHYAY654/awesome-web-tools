@@ -36,22 +36,22 @@ export function setup(container) {
   const author = container.querySelector('#mt-author');
 
   const update = () => {
-    out.value = \`<!-- Primary Meta Tags -->
-<title>\${title.value || 'Title'}</title>
-<meta name="title" content="\${title.value || 'Title'}">
-<meta name="description" content="\${desc.value || 'Description'}">
-<meta name="keywords" content="\${keys.value || 'Keywords'}">
-<meta name="author" content="\${author.value || 'Author'}">
+    out.value = `<!-- Primary Meta Tags -->
+<title>${title.value || 'Title'}</title>
+<meta name="title" content="${title.value || 'Title'}">
+<meta name="description" content="${desc.value || 'Description'}">
+<meta name="keywords" content="${keys.value || 'Keywords'}">
+<meta name="author" content="${author.value || 'Author'}">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="\${title.value || 'Title'}">
-<meta property="og:description" content="\${desc.value || 'Description'}">
+<meta property="og:title" content="${title.value || 'Title'}">
+<meta property="og:description" content="${desc.value || 'Description'}">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="\${title.value || 'Title'}">
-<meta property="twitter:description" content="\${desc.value || 'Description'}\`;
+<meta property="twitter:title" content="${title.value || 'Title'}">
+<meta property="twitter:description" content="${desc.value || 'Description'}`;
   };
 
   inputs.forEach(i => i.addEventListener('input', update));

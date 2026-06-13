@@ -21,13 +21,13 @@ export function setup(container) {
   const copy = container.querySelector('#tc-copy');
 
   const toTitleCase = (str) => {
-    return str.replace(/\\w\\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+    return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
   };
 
   const toCamelCase = (str) => {
-    return str.replace(/(?:^\\w|[A-Z]|\\b\\w)/g, (word, index) => {
+    return str.replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) => {
       return index === 0 ? word.toLowerCase() : word.toUpperCase();
-    }).replace(/\\s+/g, '');
+    }).replace(/\s+/g, '');
   };
 
   btns.forEach(btn => {
@@ -39,8 +39,8 @@ export function setup(container) {
         case 'lower': res = text.toLowerCase(); break;
         case 'title': res = toTitleCase(text); break;
         case 'camel': res = toCamelCase(text); break;
-        case 'snake': res = text.toLowerCase().replace(/\\s+/g, '_'); break;
-        case 'kebab': res = text.toLowerCase().replace(/\\s+/g, '-'); break;
+        case 'snake': res = text.toLowerCase().replace(/\s+/g, '_'); break;
+        case 'kebab': res = text.toLowerCase().replace(/\s+/g, '-'); break;
       }
       input.value = res;
     });

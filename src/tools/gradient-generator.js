@@ -31,9 +31,9 @@ export function setup(container) {
   const copyBtn = container.querySelector('#grad-copy');
 
   const update = () => {
-    const cssStr = \`linear-gradient(\${angle.value || 90}deg, \${c1.value}, \${c2.value})\`;
+    const cssStr = `linear-gradient(${angle.value || 90}deg, ${c1.value}, ${c2.value})`;
     preview.style.background = cssStr;
-    cssOut.value = \`background: \${cssStr};\`;
+    cssOut.value = `background: ${cssStr};`;
   };
 
   c1.addEventListener('input', update);

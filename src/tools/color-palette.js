@@ -32,7 +32,7 @@ export function setup(container) {
       div.style.cursor = 'pointer';
       div.style.transition = 'transform 0.2s';
       
-      div.innerHTML = \`<span style="background: rgba(255,255,255,0.9); color: #000; padding: 0.25rem 0.5rem; border-radius: 4px; font-weight: bold;">\${hex}</span>\`;
+      div.innerHTML = `<span style="background: rgba(255,255,255,0.9); color: #000; padding: 0.25rem 0.5rem; border-radius: 4px; font-weight: bold;">${hex}</span>`;
       
       div.addEventListener('click', () => {
         navigator.clipboard.writeText(hex);
