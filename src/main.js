@@ -9,6 +9,8 @@ import './js/tools/color-palette.js';
 import './js/tools/gradient-gen.js';
 import './js/tools/json-format.js';
 import './js/tools/md-preview.js';
+import './js/tools/base64-conv.js';
+import './js/tools/img-base64.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
