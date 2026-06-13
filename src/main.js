@@ -5,6 +5,8 @@ import { renderSidebar, renderToolsGrid } from './js/ui.js';
 // Tool modules
 import './js/tools/password-gen.js';
 import './js/tools/qrcode-gen.js';
+import './js/tools/color-palette.js';
+import './js/tools/gradient-gen.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
