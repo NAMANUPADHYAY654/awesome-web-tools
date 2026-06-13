@@ -2,6 +2,10 @@ import './style.css';
 import { initTheme } from './js/theme.js';
 import { renderSidebar, renderToolsGrid } from './js/ui.js';
 
+// Tool modules
+import './js/tools/password-gen.js';
+import './js/tools/qrcode-gen.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   renderSidebar();
