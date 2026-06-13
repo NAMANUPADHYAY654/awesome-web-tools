@@ -6,6 +6,8 @@ A modern, responsive, open-source collection of 20+ essential web tools for deve
   <img src="https://raw.githubusercontent.com/awesome-web-tools/awesome-web-tools/main/public/assets/preview.png" alt="Awesome Web Tools Screenshot" width="800">
 </div>
 
+### 🚀 Live Deployment: [https://NAMANUPADHYAY654.github.io/awesome-web-tools/](https://NAMANUPADHYAY654.github.io/awesome-web-tools/)
+
 ## ✨ Features
 - **20 Essential Tools**: Everything from a Password Generator to a Markdown Previewer.
 - **Premium Design**: Modern UI with glassmorphism, smooth animations, and a dark/light mode toggle.
@@ -38,7 +40,7 @@ A modern, responsive, open-source collection of 20+ essential web tools for deve
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/awesome-web-tools.git
+git clone https://github.com/NAMANUPADHYAY654/awesome-web-tools.git
 
 # Navigate into the directory
 cd awesome-web-tools
@@ -60,3 +62,8 @@ Contributions are always welcome! See `CONTRIBUTING.md` for ways to get started.
 
 ## 📝 License
 This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+## 👨‍💻 Author
+
+**Naman Upadhyay**
+- GitHub: [@NAMANUPADHYAY654](https://github.com/NAMANUPADHYAY654)

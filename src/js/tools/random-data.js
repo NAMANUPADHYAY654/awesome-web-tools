@@ -25,8 +25,8 @@ window.addEventListener('tool-loaded', (e) => {
         </div>
       `;
 
-      const fName = ["John", "Jane", "Alice", "Bob", "Charlie", "Diana"];
-      const lName = ["Smith", "Doe", "Johnson", "Brown", "Williams", "Jones"];
+      const fName = ["Aarav", "Vivaan", "Aditya", "Diya", "Isha", "Ananya", "Arjun", "Kavya", "Neha", "Priya"];
+      const lName = ["Sharma", "Verma", "Gupta", "Malhotra", "Singh", "Patel", "Kumar", "Shah", "Jain", "Reddy"];
       
       const genUser = (id) => {
         const fn = fName[Math.floor(Math.random() * fName.length)];
@@ -35,8 +35,9 @@ window.addEventListener('tool-loaded', (e) => {
           id: id,
           firstName: fn,
           lastName: ln,
-          email: \`\${fn.toLowerCase()}.\${ln.toLowerCase()}@example.com\`,
-          age: Math.floor(Math.random() * 50) + 18
+          email: \`\${fn.toLowerCase()}.\${ln.toLowerCase()}@example.in\`,
+          age: Math.floor(Math.random() * 50) + 18,
+          balance: \`₹\${(Math.random() * 100000).toFixed(2)}\`
         };
       };
 

@@ -1,8 +1,9 @@
 {
   "name": "awesome-web-tools",
   "version": "0.0.0",
-  "private": true,
+  "description": "A modern, responsive, open-source collection of 20+ essential web tools for developers and everyday users, built with Vite and vanilla JavaScript.",
   "type": "module",
+  "author": "Naman Upadhyay",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

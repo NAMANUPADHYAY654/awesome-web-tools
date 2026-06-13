@@ -9,7 +9,7 @@ window.addEventListener('tool-loaded', (e) => {
               <div><label style="display:block; margin-bottom:0.5rem; color:var(--text-muted);">Title</label><input type="text" id="mt-title" class="input" placeholder="Page Title" /></div>
               <div><label style="display:block; margin-bottom:0.5rem; color:var(--text-muted);">Description</label><textarea id="mt-desc" class="input textarea" style="min-height: 80px;" placeholder="Page Description"></textarea></div>
               <div><label style="display:block; margin-bottom:0.5rem; color:var(--text-muted);">Keywords</label><input type="text" id="mt-keywords" class="input" placeholder="keyword1, keyword2" /></div>
-              <div><label style="display:block; margin-bottom:0.5rem; color:var(--text-muted);">Author</label><input type="text" id="mt-author" class="input" placeholder="John Doe" /></div>
+              <div><label style="display:block; margin-bottom:0.5rem; color:var(--text-muted);">Author</label><input type="text" id="mt-author" class="input" placeholder="Naman Upadhyay" /></div>
             </div>
             <div class="glass-panel" style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 1rem;">
               <textarea id="mt-output" class="input textarea" style="flex: 1; font-family: monospace;" readonly></textarea>
