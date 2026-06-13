@@ -13,6 +13,8 @@ import './js/tools/base64-conv.js';
 import './js/tools/img-base64.js';
 import './js/tools/text-case.js';
 import './js/tools/word-count.js';
+import './js/tools/regex-test.js';
+import './js/tools/url-short.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
