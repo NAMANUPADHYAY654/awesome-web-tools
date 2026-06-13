@@ -11,6 +11,8 @@ import './js/tools/json-format.js';
 import './js/tools/md-preview.js';
 import './js/tools/base64-conv.js';
 import './js/tools/img-base64.js';
+import './js/tools/text-case.js';
+import './js/tools/word-count.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
