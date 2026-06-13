@@ -19,6 +19,10 @@ import './js/tools/uuid-gen.js';
 import './js/tools/time-conv.js';
 import './js/tools/unit-conv.js';
 import './js/tools/bmi-calc.js';
+import './js/tools/meta-tags.js';
+import './js/tools/lorem-ipsum.js';
+import './js/tools/random-data.js';
+import './js/tools/cron-help.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
