@@ -29,7 +29,7 @@ window.addEventListener('tool-loaded', (e) => {
         btn.disabled = true;
 
         // Use api.qrserver.com to generate the QR code to keep the code footprint small and dependency-free
-        const url = \`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=\${encodeURIComponent(text)}\`;
+        const url = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(text)}`;
         
         try {
           const response = await fetch(url);

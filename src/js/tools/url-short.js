@@ -44,7 +44,7 @@ window.addEventListener('tool-loaded', (e) => {
         
         setTimeout(() => {
           const shortCode = generateShortString();
-          const shortUrl = \`https://awt.short/\${shortCode}\`;
+          const shortUrl = `https://awt.short/${shortCode}`;
           output.value = shortUrl;
           result.style.display = 'block';
           

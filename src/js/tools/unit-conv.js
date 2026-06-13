@@ -67,7 +67,7 @@ window.addEventListener('tool-loaded', (e) => {
         const opts = units[cat];
         let html = '';
         for (const [key, val] of Object.entries(opts)) {
-          html += \`<option value="\${key}">\${val.name}</option>\`;
+          html += `<option value="${key}">${val.name}</option>`;
         }
         from.innerHTML = html;
         to.innerHTML = html;

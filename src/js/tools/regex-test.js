@@ -56,7 +56,7 @@ window.addEventListener('tool-loaded', (e) => {
             output.innerHTML = '<span style="color: var(--text-muted);">No matches found.</span>';
           } else {
             output.innerHTML = matches.map((m, i) => 
-              \`<div style="margin-bottom: 0.5rem;"><strong>Match \${i + 1}:</strong> "\${m[0]}" at index \${m.index}</div>\`
+              `<div style="margin-bottom: 0.5rem;"><strong>Match ${i + 1}:</strong> "${m[0]}" at index ${m.index}</div>`
             ).join('');
           }
         } catch (err) {

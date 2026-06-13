@@ -33,10 +33,10 @@ window.addEventListener('tool-loaded', (e) => {
         const a = author.value.trim();
 
         let tags = '';
-        if (t) tags += \`<title>\${t}</title>\\n<meta property="og:title" content="\${t}">\\n<meta name="twitter:title" content="\${t}">\\n\`;
-        if (d) tags += \`<meta name="description" content="\${d}">\\n<meta property="og:description" content="\${d}">\\n<meta name="twitter:description" content="\${d}">\\n\`;
-        if (k) tags += \`<meta name="keywords" content="\${k}">\\n\`;
-        if (a) tags += \`<meta name="author" content="\${a}">\\n\`;
+        if (t) tags += `<title>${t}</title>\n<meta property="og:title" content="${t}">\n<meta name="twitter:title" content="${t}">\n`;
+        if (d) tags += `<meta name="description" content="${d}">\n<meta property="og:description" content="${d}">\n<meta name="twitter:description" content="${d}">\n`;
+        if (k) tags += `<meta name="keywords" content="${k}">\n`;
+        if (a) tags += `<meta name="author" content="${a}">\n`;
 
         output.value = tags;
       };

@@ -35,9 +35,9 @@ window.addEventListener('tool-loaded', (e) => {
           id: id,
           firstName: fn,
           lastName: ln,
-          email: \`\${fn.toLowerCase()}.\${ln.toLowerCase()}@example.in\`,
+          email: `${fn.toLowerCase()}.${ln.toLowerCase()}@example.in`,
           age: Math.floor(Math.random() * 50) + 18,
-          balance: \`₹\${(Math.random() * 100000).toFixed(2)}\`
+          balance: `₹${(Math.random() * 100000).toFixed(2)}`
         };
       };
 
@@ -61,9 +61,9 @@ window.addEventListener('tool-loaded', (e) => {
           out.value = JSON.stringify(data, null, 2);
         } else {
           const keys = Object.keys(data[0]);
-          let csv = keys.join(',') + '\\n';
+          let csv = keys.join(',') + '\n';
           data.forEach(item => {
-            csv += keys.map(k => item[k]).join(',') + '\\n';
+            csv += keys.map(k => item[k]).join(',') + '\n';
           });
           out.value = csv;
         }

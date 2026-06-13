@@ -38,9 +38,9 @@ window.addEventListener('tool-loaded', (e) => {
       const btnRandom = document.getElementById('gg-random');
 
       const update = () => {
-        const val = \`linear-gradient(\${dir.value}, \${c1.value}, \${c2.value})\`;
+        const val = `linear-gradient(${dir.value}, ${c1.value}, ${c2.value})`;
         preview.style.background = val;
-        cssOut.value = \`background: \${val};\`;
+        cssOut.value = `background: ${val};`;
       };
 
       const randomHex = () => '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');

@@ -45,7 +45,7 @@ window.addEventListener('tool-loaded', (e) => {
         if (isNaN(count) || count < 1) return;
         let text = '';
         for (let i = 0; i < count; i++) {
-          text += generatePara() + '\\n\\n';
+          text += generatePara() + '\n\n';
         }
         out.value = text.trim();
       };
